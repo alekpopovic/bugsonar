@@ -1,18 +1,28 @@
 # Bugsify
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bugsify`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Add gems to the application's Gemfile by executing:
 
-    $ bundle add bugsify
+```sh
+gem "httparty"
+gem 'bugsify', '~> 0.1.0'
+```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+Setup bugsify gem by executing:
 
-    $ gem install bugsify
+```sh 
+rails g bugsify:install
+```
+
+Setup application_uid && application_secret from project page https://app.bugsify.io/projects/YOUR_PROJECT
+
+```sh 
+Bugsify::Config.instance.setup do |config|
+  config.application_uid = "YOUR_PROJECT_APPLICATION_UID"
+  config.application_secret = "YOUR_PROJECT_APPLICATION_SECRET"
+end
+```
 
 ## Usage
 
