@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "bugsify/configuration"
-require_relative "bugsify/version"
+require "bugsify/version"
+require "bugsify/config"
+require "bugsify/logger"
 
 module Bugsify
   class Error < StandardError; end
-  # Your code goes here...
 end
