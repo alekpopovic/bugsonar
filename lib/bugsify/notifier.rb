@@ -1,13 +1,14 @@
-module Bugsify
-  class Notifier
-    include Singleton
+require_relative './constants'
 
+module Bugsify
+  module Notifier
     def notify(data = {})
+      # p Bugsify.application_uid
       HTTParty.post(
-        "https://api.bugsify.io/v1/events/collector",
+        Bugsify::Constants::API_COLLECTOR_ENDPOINT,
         headers: {
-          "application_uid" => Bugsify::Config.instance.application_uid,
-          "application_secret" => Bugsify::Config.instance.application_secret,
+          Bugsify::Constants::API_APPLICATION_UID_KEY => Bugsify.application_uid,
+          Bugsify::Constants::API_APPLICATION_SECRET_KEY => Bugsify.application_secret,
         },
         body: {
           data: data,
@@ -17,3 +18,5 @@ module Bugsify
     end
   end
 end
+
+#p Bugsify.application_uid
