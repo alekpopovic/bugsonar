@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
-require_relative "./bugsify/version"
-require_relative "./bugsify/config"
-require_relative './bugsify/constants'
-require_relative "./bugsify/logger"
+require 'thread'
+require 'uri'
+require 'net/http'
+require 'json'
+require "bugsify/version"
+require "bugsify/config"
+require "bugsify/logger"
 
 module Bugsify 
   class << self
@@ -16,17 +19,29 @@ module Bugsify
     end
 
     def notify(data = {})
-      req = HTTParty.post(
-        Bugsify::Constants::API_COLLECTOR_ENDPOINT,
-        headers: {
-          Bugsify::Constants::API_APPLICATION_UID_KEY => @config.application_uid,
-          Bugsify::Constants::API_APPLICATION_SECRET_KEY => @config.application_secret,
-        },
-        body: {
-          data: data,
-          app_env: Rails.env
+      semaphore = Thread::Mutex.new
+
+      Thread.new {
+        semaphore.synchronize {
+          uri = URI.parse("https://api.bugsify.io/v1/events/collector")
+
+          http = Net::HTTP.new(uri.host, uri.port)
+          http.use_ssl = true
+
+          request = Net::HTTP::Post.new(uri.path, initheader = {
+            'Content-Type' => 'application/json',
+            'application_uid' => @config.application_uid,
+            'application_secret' => @config.application_secret
+          })
+
+          request.body = {
+            data: data,
+            app_env: Rails.env
+          }.to_json
+
+          http.request(request)
         }
-      )
+      }
     end
   end
 end

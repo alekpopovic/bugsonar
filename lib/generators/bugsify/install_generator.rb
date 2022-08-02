@@ -20,6 +20,7 @@ module Bugsify
 Bugsify.configure do |config|
   config.application_uid = ""
   config.application_secret = ""
+  config.application_env = ""
 end
         FILE
       end

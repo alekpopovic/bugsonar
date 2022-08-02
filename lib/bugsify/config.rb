@@ -1,7 +1,7 @@
 module Bugsify
   class Config
-    attr_accessor :application_uid, :application_secret
-
-    def initialize; end
+    attr_accessor :application_uid, 
+                  :application_secret,
+                  :application_env
   end
 end
