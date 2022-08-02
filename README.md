@@ -2,11 +2,10 @@
 
 ## Installation
 
-Add gems to the application's Gemfile by executing:
+Add gem to the application's Gemfile by executing:
 
 ```sh
-gem "httparty"
-gem 'bugsify', '~> 0.1.0'
+gem 'bugsify', '~> 0.1.2'
 ```
 
 Setup bugsify gem by executing:
@@ -21,6 +20,7 @@ Setup application_uid && application_secret from project page https://app.bugsif
 Bugsify::Config.instance.setup do |config|
   config.application_uid = "YOUR_PROJECT_APPLICATION_UID"
   config.application_secret = "YOUR_PROJECT_APPLICATION_SECRET"
+  config.application_env = "development or production"
 end
 ```
 
