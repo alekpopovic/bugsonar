@@ -2,7 +2,6 @@ require_relative "./notifier"
 
 module Bugsify
   class Logger
-
     def initialize(app)
       @app = app
     end

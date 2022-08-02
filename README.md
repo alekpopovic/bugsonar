@@ -6,7 +6,7 @@ Add gems to the application's Gemfile by executing:
 
 ```sh
 gem "httparty"
-gem 'bugsify', '~> 0.1.0'
+gem 'bugsify', '~> 0.1.1'
 ```
 
 Setup bugsify gem by executing:

@@ -17,7 +17,7 @@ module Bugsify
         create_file "config/initializers/bugsify.rb", <<-FILE
 # frozen_string_literal: true
 
-Bugsify::Config.instance.setup do |config|
+Bugsify.configure do |config|
   config.application_uid = ""
   config.application_secret = ""
 end
