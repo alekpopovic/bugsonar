@@ -5,7 +5,7 @@
 Add gem to the application's Gemfile by executing:
 
 ```sh
-gem 'bugsify', '~> 0.1.2'
+gem 'bugsify', '~> 0.1.3'
 ```
 
 Setup bugsify gem by executing:

@@ -6,7 +6,7 @@ require 'net/http'
 require 'json'
 require "bugsify/version"
 require "bugsify/config"
-require "bugsify/logger"
+require "bugsify/notifiers/rails_notifier" if defined?(Rails::Application)
 
 module Bugsify 
   class << self
@@ -18,7 +18,7 @@ module Bugsify
       yield(config)
     end
 
-    def notify(data = {})
+    def notify(error)
       semaphore = Thread::Mutex.new
 
       Thread.new {
@@ -35,13 +35,23 @@ module Bugsify
           })
 
           request.body = {
-            data: data,
-            app_env: Rails.env
+            data: {
+              error: error
+            },
+            app_env: @config.application_env
           }.to_json
 
           http.request(request)
         }
       }
+    end
+  end
+
+  if defined?(Rails::Application)
+    class BugsifyEngine < Rails::Engine
+      initializer "bugsify_engine.add_middleware" do |app|
+        app.middleware.use Bugsify::RailsNotifier
+      end
     end
   end
 end
