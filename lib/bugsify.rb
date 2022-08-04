@@ -50,7 +50,7 @@ module Bugsify
   if defined?(Rails::Application)
     class BugsifyEngine < Rails::Engine
       initializer "bugsify_engine.add_middleware" do |app|
-        app.middleware.use Bugsify::RailsNotifier
+        app.middleware.use Bugsify::RailsMiddleware
       end
     end
   end
