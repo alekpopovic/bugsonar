@@ -5,28 +5,30 @@
 Add gem to the application's Gemfile by executing:
 
 ```sh
-gem 'bugsify', '~> 0.1.3'
+gem 'bugsify'
 ```
 
 Setup bugsify gem by executing:
+
+If you using rails:
 
 ```sh 
 rails g bugsify:install
 ```
 
+Or create config file bugsify.rb
+
+## Usage
+
 Setup application_uid && application_secret from project page https://app.bugsify.io/projects/YOUR_PROJECT
 
 ```sh 
-Bugsify::Config.instance.setup do |config|
+Bugsify.configure do |config|
   config.application_uid = "YOUR_PROJECT_APPLICATION_UID"
   config.application_secret = "YOUR_PROJECT_APPLICATION_SECRET"
   config.application_env = "development or production"
 end
 ```
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 

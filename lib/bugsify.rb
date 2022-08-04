@@ -6,7 +6,7 @@ require 'net/http'
 require 'json'
 require "bugsify/version"
 require "bugsify/config"
-require "bugsify/notifiers/rails_notifier" if defined?(Rails::Application)
+require "bugsify/middleware/rails_middleware" if defined?(Rails::Application)
 
 module Bugsify 
   class << self

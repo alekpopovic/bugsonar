@@ -5,7 +5,7 @@ if defined?(Rails::Application)
   require "rails/all"
 
   module Bugsify
-    class RailsNotifier
+    class RailsMiddleware
       def initialize(app)
         @app = app
       end
