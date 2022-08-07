@@ -8,9 +8,9 @@ module Bugsify
 
     def call(env)
       @app.call(env)
-    rescue StandardError => e
-      Bugsify.notify(e)
-      raise e
+    rescue StandardError => error
+      Bugsify.notify(error)
+      raise error
     end
   end
 end

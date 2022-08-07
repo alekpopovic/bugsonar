@@ -10,7 +10,7 @@ require "bugsify/middlewares/rails_middleware" if defined?(Rails::Application)
 require "bugsify/middlewares/sinatra_middleware" if Gem.loaded_specs.has_key?("sinatra")
 require "bugsify/middlewares/padrino_middleware"
 
-module Bugsify 
+module Bugsify
   class << self
     def config
       @config ||= Config.new
@@ -20,7 +20,7 @@ module Bugsify
       yield(config)
     end
 
-    def notify(error)
+    def notify(event)
       semaphore = Thread::Mutex.new
 
       Thread.new {
@@ -38,9 +38,12 @@ module Bugsify
 
           request.body = {
             data: {
-              error: error
+              errorClass: event[:error_class],
+              errorBacktrace: event[:error_backtrace],
+              errorFullBacktrace: event[:error_full_backtrace],
+              runtimeVersion: event[:runtime_version],
+              applicationEnvironment: ENV["RACK_ENV"],
             },
-            app_env: @config.application_env
           }.to_json
 
           http.request(request)
