@@ -1,5 +1,7 @@
 # Bugsify
 
+## Error monitoring & exception reporter for Ruby
+
 ## Installation
 
 Add gem to the application's Gemfile by executing:
@@ -26,7 +28,6 @@ Setup application_uid && application_secret from project page https://app.bugsif
 Bugsify.configure do |config|
   config.application_uid = "YOUR_PROJECT_APPLICATION_UID"
   config.application_secret = "YOUR_PROJECT_APPLICATION_SECRET"
-  config.application_env = "development or production"
 end
 ```
 
