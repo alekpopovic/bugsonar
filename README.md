@@ -14,7 +14,7 @@ Setup bugsify gem by executing:
 
 If you using rails:
 
-```sh 
+```sh
 rails g bugsify:install
 ```
 
@@ -22,9 +22,9 @@ Or create config file bugsify.rb
 
 ## Usage
 
-Setup api_key && api_secret from project page https://app.bugsify.io/projects/YOUR_PROJECT
+Setup api_key and api_secret from project page https://app.bugsify.io/projects/YOUR_PROJECT
 
-```sh 
+```sh
 Bugsify.configure do |config|
   config.api_key = "YOUR_PROJECT_API_KEY"
   config.api_secret = "YOUR_PROJECT_API_SECRET"
