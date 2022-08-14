@@ -22,12 +22,12 @@ Or create config file bugsify.rb
 
 ## Usage
 
-Setup application_uid && application_secret from project page https://app.bugsify.io/projects/YOUR_PROJECT
+Setup api_key && api_secret from project page https://app.bugsify.io/projects/YOUR_PROJECT
 
 ```sh 
 Bugsify.configure do |config|
-  config.application_uid = "YOUR_PROJECT_APPLICATION_UID"
-  config.application_secret = "YOUR_PROJECT_APPLICATION_SECRET"
+  config.api_key = "YOUR_PROJECT_API_KEY"
+  config.api_secret = "YOUR_PROJECT_API_SECRET"
 end
 ```
 

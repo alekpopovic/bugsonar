@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'thread'
-require 'uri'
-require 'net/http'
-require 'json'
+# require "thread"
+require "uri"
+require "net/http"
+require "json"
 require "bugsify/version"
 require "bugsify/config"
 require "bugsify/middlewares/rails_middleware" if defined?(Rails::Application)
@@ -30,10 +30,10 @@ module Bugsify
           http = Net::HTTP.new(uri.host, uri.port)
           http.use_ssl = true
 
-          request = Net::HTTP::Post.new(uri.path, initheader = {
-            'Content-Type' => 'application/json',
-            'application_uid' => @config.application_uid,
-            'application_secret' => @config.application_secret
+          request = Net::HTTP::Post.new(uri.path, {
+            "Content-Type" => "application/json",
+            "api_key" => @config.api_key,
+            "api_secret" => @config.api_secret
           })
 
           request.body = {
@@ -42,8 +42,8 @@ module Bugsify
               errorBacktrace: event[:error_backtrace],
               errorFullBacktrace: event[:error_full_backtrace],
               runtimeVersion: event[:runtime_version],
-              applicationEnvironment: ENV["RACK_ENV"],
-            },
+              applicationEnvironment: ENV["RACK_ENV"]
+            }
           }.to_json
 
           http.request(request)

@@ -2,7 +2,7 @@
 
 module Bugsify
   class Config
-    attr_accessor :application_uid,
-                  :application_secret
+    attr_accessor :api_key,
+                  :api_secret
   end
 end

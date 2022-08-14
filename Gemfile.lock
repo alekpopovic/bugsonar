@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bugsify (0.1.4)
+    bugsify (0.2.1)
 
 GEM
   remote: https://rubygems.org/
@@ -45,6 +45,7 @@ GEM
     unicode-display_width (2.2.0)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -54,4 +55,4 @@ DEPENDENCIES
   rubocop (~> 1.21)
 
 BUNDLED WITH
-   2.3.19
+   2.3.13
