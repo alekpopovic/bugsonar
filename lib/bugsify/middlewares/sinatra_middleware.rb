@@ -3,15 +3,17 @@
 if Gem.loaded_specs.has_key?("sinatra")
   module Bugsify
     class SinatraMiddleware
+      include ::DefaultNotifier
+
       def initialize(app)
         @app = app
       end
 
       def call(env)
         @app.call(env)
-      rescue StandardError => error
-        Bugsify.notify(error)
-        raise error
+      rescue StandardError => e
+        notify(e)
+        raise e
       end
     end
   end

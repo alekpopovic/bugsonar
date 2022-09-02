@@ -2,15 +2,17 @@
 
 module Bugsify
   class PadrinoMiddleware
+    include ::DefaultNotifier
+
     def initialize(app)
       @app = app
     end
 
     def call(env)
       @app.call(env)
-    rescue StandardError => error
-      Bugsify.notify(error)
-      raise error
+    rescue StandardError => e
+      notify(e)
+      raise e
     end
   end
 end
