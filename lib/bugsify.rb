@@ -7,10 +7,11 @@ require "bugsify/middlewares/rails_middleware"   if Gem.loaded_specs.has_key?("r
 require "bugsify/middlewares/sinatra_middleware" if Gem.loaded_specs.has_key?("sinatra")
 require "bugsify/middlewares/padrino_middleware" if Gem.loaded_specs.has_key?("padrino")
 
+# Bugsify
 module Bugsify
   include Config
 
   class Notifier
-    extend Bugsify::DefaultNotifier
+    extend Bugsify::Notifier::Default
   end
 end

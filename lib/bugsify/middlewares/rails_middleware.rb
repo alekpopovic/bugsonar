@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 if Gem.loaded_specs.has_key?("rails")
-  require_relative '../notifiers/default_notifier'
+  require_relative "../notifiers/default_notifier"
 
   module Bugsify
     module Middleware
+      # Rails
       class Rails
         include Bugsify::DefaultNotifier
 
@@ -27,13 +28,8 @@ if Gem.loaded_specs.has_key?("rails")
               ruby: RUBY_VERSION,
             },
           }
-          if request.show_exceptions?
-            notify(payload)
-            raise e
-          else
-            notify(payload)
-            raise e
-          end
+          notify(payload)
+          raise e
         end
       end
     end
