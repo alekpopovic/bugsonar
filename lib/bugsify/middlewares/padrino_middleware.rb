@@ -1,23 +1,33 @@
 # frozen_string_literal: true
 
 if Gem.loaded_specs.has_key?("padrino")
-  require_relative "../reporters/default_reporter"
+  require_relative "../reporters/rack_reporter"
 
   module Bugsify
     module Middleware
       # Padrino
       class Padrino
-        include Bugsify::Reporter::Default
+        include Bugsify::Reporter::Rack
 
         def initialize(app)
           @app = app
         end
 
         def call(env)
-          request = Rack::Request.new(env)
+          # request = Rack::Request.new(env)
           @app.call(env)
-        rescue StandardError => e
-          notify(e)
+        rescue Exception => e
+          payload = {
+            error_class: e.class,
+            error_backtrace: e,
+            error_full_backtrace: "\n#{e.class}\n#{e.message}\n#{e}",
+            runtime_version: {
+              padrino: Gem.loaded_specs["padrino"].version,
+              rack: Gem.loaded_specs["rake"].version,
+              ruby: RUBY_VERSION,
+            },
+          }
+          notify(payload)
           raise e
         end
       end

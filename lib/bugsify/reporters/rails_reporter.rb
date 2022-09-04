@@ -6,8 +6,8 @@ require "json"
 
 module Bugsify
   module Reporter
-    # Default
-    module Default
+    # Rails
+    module Rails
       def notify(event)
         semaphore = Thread::Mutex.new
 

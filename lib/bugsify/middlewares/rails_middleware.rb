@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
 if Gem.loaded_specs.has_key?("rails")
-  require_relative "../reporters/default_reporter"
+  require_relative "../reporters/rails_reporter"
 
   module Bugsify
     module Middleware
       # Rails
       class Rails
-        include Bugsify::Reporter::Default
+        include Bugsify::Reporter::Rails
 
         def initialize(app)
           @app = app
         end
 
         def call(env)
-          request = ActionDispatch::Request.new env
+          # request = ActionDispatch::Request.new env
           @app.call(env)
         rescue Exception => e
           trace = e.backtrace.select { |l| l.start_with?(Rack::Directory.new("").root) }.join("\n    ")
