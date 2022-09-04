@@ -7,14 +7,15 @@ require "json"
 module Bugsify
   module DefaultNotifier
     def notify(event)
+      # "https://api.bugsify.io/v1/events/collector"
       semaphore = Thread::Mutex.new
 
       Thread.new {
         semaphore.synchronize {
-          uri = URI.parse("https://api.bugsify.io/v1/events/collector")
+          uri = URI.parse("http://localhost:4000/v1/events/collector")
 
           http = Net::HTTP.new(uri.host, uri.port)
-          http.use_ssl = true
+          http.use_ssl = false
 
           request = Net::HTTP::Post.new(uri.path, {
             "Content-Type" => "application/json",
