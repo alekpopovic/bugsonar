@@ -12,6 +12,6 @@ module Bugsify
   include Config
 
   class Notifier
-    extend Bugsify::Notifier::Default
+    # extend Bugsify::Reporter::Custom
   end
 end

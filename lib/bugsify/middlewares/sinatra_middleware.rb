@@ -3,12 +3,12 @@
 require 'debug'
 
 if Gem.loaded_specs.has_key?("sinatra")
-  require_relative '../notifiers/default_notifier'
+  require_relative "../reporters/default_reporter"
 
   module Bugsify
     module Middleware
       class Sinatra
-        include Bugsify::DefaultNotifier
+        include Bugsify::Reporter::Default
 
         def initialize(app)
           @app = app

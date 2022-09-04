@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 if Gem.loaded_specs.has_key?("padrino")
-  require_relative "../notifiers/default_notifier"
+  require_relative "../reporters/default_reporter"
 
   module Bugsify
     module Middleware
       # Padrino
       class Padrino
+        include Bugsify::Reporter::Default
+
         def initialize(app)
           @app = app
         end

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 if Gem.loaded_specs.has_key?("rails")
-  require_relative "../notifiers/default_notifier"
+  require_relative "../reporters/default_reporter"
 
   module Bugsify
     module Middleware
       # Rails
       class Rails
-        include Bugsify::DefaultNotifier
+        include Bugsify::Reporter::Default
 
         def initialize(app)
           @app = app
@@ -17,7 +17,7 @@ if Gem.loaded_specs.has_key?("rails")
           request = ActionDispatch::Request.new env
           @app.call(env)
         rescue Exception => e
-          trace = e.backtrace.select { |l| l.start_with?(Rails.root.to_s) }.join("\n    ")
+          trace = e.backtrace.select { |l| l.start_with?(Rack::Directory.new("").root) }.join("\n    ")
           payload = {
             error_class: e.class,
             error_backtrace: "\n#{e.class}\n#{e.message}\n#{trace}",

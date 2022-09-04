@@ -5,7 +5,7 @@ require "net/http"
 require "json"
 
 module Bugsify
-  module Notifier
+  module Reporter
     module Custom
       include Config
     end
