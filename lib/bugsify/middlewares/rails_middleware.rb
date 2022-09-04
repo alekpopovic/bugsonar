@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-if defined?(Rails::Application)
+if Gem.loaded_specs.has_key?("rails")
+  require_relative '../notifiers/default_notifier'
+
   module Bugsify
     class RailsMiddleware
-      include ::DefaultNotifier
+      include Bugsify::DefaultNotifier
 
       def initialize(app)
         @app = app

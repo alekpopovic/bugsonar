@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-if defined?(Rails::Application)
-
+if Gem.loaded_specs.has_key?("rails")
 require "rails/generators"
 
   module Bugsify

@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 if Gem.loaded_specs.has_key?("sinatra")
+  require_relative '../notifiers/default_notifier'
+
   module Bugsify
     class SinatraMiddleware
-      include ::DefaultNotifier
+      include Bugsify::DefaultNotifier
 
       def initialize(app)
         @app = app

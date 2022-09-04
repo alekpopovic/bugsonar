@@ -6,8 +6,6 @@ require "json"
 
 module Bugsify
   module DefaultNotifier
-    include Config
-
     def notify(event)
       semaphore = Thread::Mutex.new
 
@@ -20,8 +18,8 @@ module Bugsify
 
           request = Net::HTTP::Post.new(uri.path, {
             "Content-Type" => "application/json",
-            "api_key" => config.api_key,
-            "api_secret" => config.api_secret
+            "api_key" => Bugsify.config.api_key,
+            "api_secret" => Bugsify.config.api_secret
           })
 
           request.body = {

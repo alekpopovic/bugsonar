@@ -15,6 +15,8 @@ module Bugsify
         yield config
       end
     end
+
+    extend ClassMethods
   
     class Configuration
       attr_accessor :api_key, :api_secret

@@ -1,18 +1,20 @@
 # frozen_string_literal: true
 
-module Bugsify
-  class PadrinoMiddleware
-    include ::DefaultNotifier
+if Gem.loaded_specs.has_key?("padrino")
+  require_relative '../notifiers/default_notifier'
 
-    def initialize(app)
-      @app = app
-    end
+  module Bugsify
+    class PadrinoMiddleware
+      def initialize(app)
+        @app = app
+      end
 
-    def call(env)
-      @app.call(env)
-    rescue StandardError => e
-      notify(e)
-      raise e
+      def call(env)
+        @app.call(env)
+      rescue StandardError => e
+        notify(e)
+        raise e
+      end
     end
   end
 end
