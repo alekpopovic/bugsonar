@@ -15,7 +15,7 @@ if Gem.loaded_specs.has_key?("sinatra")
         def call(env)
           # request = Rack::Request.new(env)
           @app.call(env)
-        rescue StandardError => e
+        rescue Exception => e
           payload = {
             error_class: e.class,
             error_backtrace: e,
