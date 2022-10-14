@@ -1,4 +1,4 @@
-# Bugsify
+# CodepopRuby
 
 ## Error monitoring & exception reporter for Ruby
 
