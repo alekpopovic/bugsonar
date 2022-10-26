@@ -1,4 +1,4 @@
-# CodepopRuby
+# cdp-ruby
 
 ## Error monitoring & exception reporter for Ruby
 

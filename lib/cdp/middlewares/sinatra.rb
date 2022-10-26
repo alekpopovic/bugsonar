@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 if Gem.loaded_specs.has_key?("sinatra")
-  require_relative "../reporters/rack_reporter"
+  require_relative "../reporters/rack"
 
-  module Bugsify
+  module Cdp
     module Middleware
       class Sinatra
-        include Bugsify::Reporter::Rack
+        include Cdp::Reporter::Rack
 
         def initialize(app)
           @app = app

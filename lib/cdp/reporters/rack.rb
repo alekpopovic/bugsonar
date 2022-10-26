@@ -4,7 +4,7 @@ require "uri"
 require "net/http"
 require "json"
 
-module Bugsify
+module Cdp
   module Reporter
     # Rack
     module Rack
@@ -16,8 +16,8 @@ module Bugsify
 
         request = Net::HTTP::Post.new(uri.path, {
           "Content-Type" => "application/json",
-          "api_key" => Bugsify.config.api_key,
-          "api_secret" => Bugsify.config.api_secret
+          "api_key" => Cdp.config.api_key,
+          "api_secret" => Cdp.config.api_secret
         })
 
         request.body = {

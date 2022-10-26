@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require_relative "lib/bugsify/version"
+require_relative "lib/cdp/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "bugsify"
-  spec.version = Bugsify::VERSION
+  spec.name = "cdp"
+  spec.version = Cdp::VERSION
   spec.authors = ["Aleksandar Popovic"]
-  spec.email = ["aleksandar.popovic@bugsify.io"]
+  spec.email = ["aleksandar.popovic@hotmail.com"]
 
-  spec.summary = "Ruby notifier for bugsify.io"
+  spec.summary = "Ruby notifier for codepop.co.rs"
   spec.description = "Bugsify error monitoring & exception reporter for Ruby"
   spec.homepage = "https://github.com/bugsify/bugsify-ruby"
   spec.license = "MIT"

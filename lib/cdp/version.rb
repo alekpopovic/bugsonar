@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Bugsify
+module Cdp
   VERSION = "0.2.5"
 end
 

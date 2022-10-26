@@ -4,7 +4,7 @@ require "uri"
 require "net/http"
 require "json"
 
-module Bugsify
+module Cdp
   module Reporter
     module Custom
       include Config

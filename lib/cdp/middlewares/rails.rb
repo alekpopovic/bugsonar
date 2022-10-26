@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 if Gem.loaded_specs.has_key?("rails")
-  require_relative "../reporters/rails_reporter"
+  require_relative "../reporters/rails"
 
-  module Bugsify
+  module Cdp
     module Middleware
       # Rails
       class Rails
-        include Bugsify::Reporter::Rails
+        include Cdp::Reporter::Rails
 
         def initialize(app)
           @app = app

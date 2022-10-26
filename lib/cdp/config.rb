@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Bugsify
+module Cdp
   module Config
     def self.included(host_class)
       host_class.extend ClassMethods
