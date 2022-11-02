@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    codepop (0.2.5)
+    codepop (1.0.0)
 
 GEM
   remote: https://rubygems.org/

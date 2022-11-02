@@ -9,7 +9,7 @@ module Codepop
     # Rack
     module Rack
       def notify(event)
-        uri = URI.parse("https://api.bugsify.io/v1/events/collector")
+        uri = URI.parse("https://api.codepop.co.rs/v1/collectors/ruby")
 
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = true
