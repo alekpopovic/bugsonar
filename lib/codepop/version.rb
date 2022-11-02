@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Cdp
-  VERSION = "0.2.5"
+module Codepop
+  VERSION = "0.2.7"
 end
 

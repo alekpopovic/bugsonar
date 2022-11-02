@@ -4,7 +4,7 @@ require "uri"
 require "net/http"
 require "json"
 
-module Cdp
+module Codepop
   module Reporter
     module Custom
       include Config

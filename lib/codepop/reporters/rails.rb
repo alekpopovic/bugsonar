@@ -4,7 +4,7 @@ require "uri"
 require "net/http"
 require "json"
 
-module Cdp
+module Codepop
   module Reporter
     # Rails
     module Rails
@@ -13,15 +13,14 @@ module Cdp
 
         Thread.new {
           semaphore.synchronize {
-            uri = URI.parse("https://api.bugsify.io/v1/events/collector")
+            uri = URI.parse("https://api.codepop.co.rs/v1/events/collector")
 
             http = Net::HTTP.new(uri.host, uri.port)
             http.use_ssl = true
 
             request = Net::HTTP::Post.new(uri.path, {
               "Content-Type" => "application/json",
-              "api_key" => Cdp.config.api_key,
-              "api_secret" => Cdp.config.api_secret
+              "Api-Key" => Codepop.config.api_key
             })
 
             request.body = {

@@ -3,11 +3,11 @@
 if Gem.loaded_specs.has_key?("rails")
   require_relative "../reporters/rails"
 
-  module Cdp
+  module Codepop
     module Middleware
       # Rails
       class Rails
-        include Cdp::Reporter::Rails
+        include Codepop::Reporter::Rails
 
         def initialize(app)
           @app = app

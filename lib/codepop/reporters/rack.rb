@@ -4,7 +4,7 @@ require "uri"
 require "net/http"
 require "json"
 
-module Cdp
+module Codepop
   module Reporter
     # Rack
     module Rack
@@ -16,8 +16,8 @@ module Cdp
 
         request = Net::HTTP::Post.new(uri.path, {
           "Content-Type" => "application/json",
-          "api_key" => Cdp.config.api_key,
-          "api_secret" => Cdp.config.api_secret
+          "api_key" => Codepop.config.api_key,
+          "api_secret" => Codepop.config.api_secret
         })
 
         request.body = {

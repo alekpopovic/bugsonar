@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bugsify (0.2.2)
+    codepop (0.2.5)
 
 GEM
   remote: https://rubygems.org/
@@ -248,7 +248,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print (~> 1.9, >= 1.9.2)
-  bugsify!
+  codepop!
   debug (~> 1.6, >= 1.6.2)
   padrino (~> 0.15.1)
   rails (~> 7.0, >= 7.0.3.1)

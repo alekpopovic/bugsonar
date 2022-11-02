@@ -1,4 +1,4 @@
-# cdp-ruby
+# codepop-ruby
 
 ## Error monitoring & exception reporter for Ruby
 
@@ -7,27 +7,26 @@
 Add gem to the application's Gemfile by executing:
 
 ```sh
-gem 'bugsify'
+gem 'codepop'
 ```
 
-Setup bugsify gem by executing:
+Setup codepop gem by executing:
 
 If you using rails:
 
 ```sh
-rails g bugsify:install
+rails g codepop:install
 ```
 
-Or create config file bugsify.rb
+Or create config file codepop.rb
 
 ## Usage
 
-Setup api_key and api_secret from project page https://app.bugsify.io/projects/YOUR_PROJECT
+Setup api_key from project page https://app.codepop.co.rs/projects/YOUR_PROJECT
 
 ```sh
-Bugsify.configure do |config|
+Codepop.configure do |config|
   config.api_key = "YOUR_PROJECT_API_KEY"
-  config.api_secret = "YOUR_PROJECT_API_SECRET"
 end
 ```
 
@@ -39,12 +38,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/bugsify/bugsify-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/bugsify/bugsify-ruby/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/codepoptech/codepop-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/codepoptech/codepop-ruby/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://github.com/bugsify/bugsify-ruby/blob/main/LICENSE.txt).
+The gem is available as open source under the terms of the [MIT License](https://github.com/codepoptech/codepop-ruby/blob/main/LICENSE.txt).
 
 ## Code of Conduct
 
-Everyone interacting in the Bugsify project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/bugsify/bugsify-ruby/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Bugsify project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/codepoptech/codepop-ruby/blob/main/CODE_OF_CONDUCT.md).

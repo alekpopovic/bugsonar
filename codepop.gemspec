@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/cdp/version"
+require_relative "lib/codepop/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "cdp"
-  spec.version = Cdp::VERSION
+  spec.name = "codepop"
+  spec.version = Codepop::VERSION
   spec.authors = ["Aleksandar Popovic"]
   spec.email = ["aleksandar.popovic@hotmail.com"]
 

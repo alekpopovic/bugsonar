@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Cdp
+module Codepop
   module Config
     def self.included(host_class)
       host_class.extend ClassMethods
@@ -19,7 +19,7 @@ module Cdp
     extend ClassMethods
   
     class Configuration
-      attr_accessor :api_key, :api_secret
+      attr_accessor :api_key
     end
   end
 end

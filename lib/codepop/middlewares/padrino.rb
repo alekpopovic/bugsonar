@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
-if Gem.loaded_specs.has_key?("sinatra")
+if Gem.loaded_specs.has_key?("padrino")
   require_relative "../reporters/rack"
 
-  module Cdp
+  module Codepop
     module Middleware
-      class Sinatra
-        include Cdp::Reporter::Rack
+      # Padrino
+      class Padrino
+        include Codepop::Reporter::Rack
 
         def initialize(app)
           @app = app
@@ -21,7 +22,7 @@ if Gem.loaded_specs.has_key?("sinatra")
             error_backtrace: e,
             error_full_backtrace: "\n#{e.class}\n#{e.message}\n#{e}",
             runtime_version: {
-              padrino: Gem.loaded_specs["sinatra"].version,
+              padrino: Gem.loaded_specs["padrino"].version,
               rack: Gem.loaded_specs["rake"].version,
               ruby: RUBY_VERSION,
             },
