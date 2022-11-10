@@ -5,6 +5,7 @@ if Gem.loaded_specs.has_key?("sinatra")
 
   module Codepop
     module Middleware
+      # Sinatra
       class Sinatra
         include Codepop::Reporter::Rack
 
@@ -22,8 +23,8 @@ if Gem.loaded_specs.has_key?("sinatra")
             runtime_version: {
               padrino: Gem.loaded_specs["sinatra"].version,
               rack: Gem.loaded_specs["rake"].version,
-              ruby: RUBY_VERSION,
-            },
+              ruby: RUBY_VERSION
+            }
           }
           notify(payload)
           raise e

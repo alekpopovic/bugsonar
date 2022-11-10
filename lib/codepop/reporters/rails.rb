@@ -11,17 +11,17 @@ module Codepop
       def notify(event)
         semaphore = Thread::Mutex.new
 
-        Thread.new {
-          semaphore.synchronize {
+        Thread.new do
+          semaphore.synchronize do
             uri = URI.parse("https://api.codepop.co.rs/v1/collectors/ruby")
 
             http = Net::HTTP.new(uri.host, uri.port)
             http.use_ssl = true
 
             request = Net::HTTP::Post.new(uri.path, {
-              "Content-Type" => "application/json",
-              "Api-Key" => Codepop.config.api_key
-            })
+                                            "Content-Type" => "application/json",
+                                            "Api-Key" => Codepop.config.api_key
+                                          })
 
             request.body = {
               data: {
@@ -34,8 +34,8 @@ module Codepop
             }.to_json
 
             http.request(request)
-          }
-        }
+          end
+        end
       end
     end
   end
