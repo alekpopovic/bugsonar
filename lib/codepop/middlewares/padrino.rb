@@ -14,7 +14,6 @@ if Gem.loaded_specs.has_key?("padrino")
         end
 
         def call(env)
-          # request = Rack::Request.new(env)
           @app.call(env)
         rescue Exception => e
           payload = {

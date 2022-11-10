@@ -1,0 +1,15 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "editor.wordWrap": "off",
+  "editor.tabSize": 2,
+  "editor.autoIndent": "advanced",
+  "editor.rulers": [80, 100, 120],
+  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  "[ruby]": {
+    "editor.formatOnSave": true
+  },
+  "files.exclude": {
+    "**/.git": true
+  }
+}

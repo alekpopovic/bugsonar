@@ -14,7 +14,6 @@ if Gem.loaded_specs.has_key?("rails")
         end
 
         def call(env)
-          # request = ActionDispatch::Request.new env
           @app.call(env)
         rescue Exception => e
           trace = e.backtrace.select { |l| l.start_with?(Rack::Directory.new("").root) }.join("\n    ")

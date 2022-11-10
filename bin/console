@@ -2,13 +2,13 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "bugsify"
+require "codepop"
 require "irb"
 
 def reload!(print = true)
-  puts 'Reloading ...' if print
-  root_dir = File.expand_path('..', __dir__)
-  reload_dirs = %w{lib specs}
+  puts "Reloading ..." if print
+  root_dir = File.expand_path("..", __dir__)
+  reload_dirs = %w[lib specs]
   reload_dirs.each do |dir|
     Dir.glob("#{root_dir}/#{dir}/**/*.rb").each { |f| load(f) }
   end
