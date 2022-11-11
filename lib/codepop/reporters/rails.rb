@@ -4,6 +4,7 @@ module Codepop
   module Reporter
     # Rails
     module Rails
+      # rubocop:disable Metrics/MethodLength
       def notify(event)
         semaphore = Thread::Mutex.new
 
@@ -14,11 +15,12 @@ module Codepop
                                   errorBacktrace: event[:error_backtrace],
                                   errorFullBacktrace: event[:error_full_backtrace],
                                   runtimeVersion: event[:runtime_version],
-                                  applicationEnvironment: ENV["RACK_ENV"]
+                                  applicationEnvironment: ENV.fetch("RACK_ENV", nil)
                                 })
           end
         end
       end
+      # rubocop:enable Metrics/MethodLength
     end
   end
 end

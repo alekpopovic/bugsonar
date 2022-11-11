@@ -13,6 +13,8 @@ if Gem.loaded_specs.has_key?("padrino")
           @app = app
         end
 
+        # rubocop:disable Metrics/MethodLength
+        # rubocop:disable Lint/RescueException
         def call(env)
           @app.call(env)
         rescue Exception => e
@@ -23,12 +25,14 @@ if Gem.loaded_specs.has_key?("padrino")
             runtime_version: {
               padrino: Gem.loaded_specs["padrino"].version,
               rack: Gem.loaded_specs["rake"].version,
-              ruby: RUBY_VERSION,
-            },
+              ruby: RUBY_VERSION
+            }
           }
           notify(payload)
           raise e
         end
+        # rubocop:enable Metrics/MethodLength
+        # rubocop:enable Lint/RescueException
       end
     end
   end

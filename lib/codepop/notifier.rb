@@ -3,6 +3,7 @@
 module Codepop
   # Error
   module Notifier
+    # rubocop:disable Metrics/MethodLength
     def auto_notify(args = {})
       params = {
         data: {
@@ -21,6 +22,7 @@ module Codepop
         &method(:parse)
       )
     end
+    # rubocop:enable Metrics/MethodLength
 
     private
 

@@ -5,11 +5,19 @@ require "uri"
 module Codepop
   # Config
   module Config
-    API_ENDPOINT = "https://api.codepop.co.rs/v1/"
+    PRODUCTION_API_ENDPOINT = "https://api.codepop.co.rs/v1/"
+    DEVELOPMENT_API_ENDPOINT = "http://localhost/v1/"
 
     class << self
       def api(uri)
-        URI.parse("#{API_ENDPOINT}#{uri}")
+        case ENV["RACK_ENV"]
+        when "production"
+          URI.parse("#{PRODUCTION_API_ENDPOINT}#{uri}")
+        when "development"
+          URI.parse("#{DEVELOPMENT_API_ENDPOINT}#{uri}")
+        else
+          URI.parse("#{DEVELOPMENT_API_ENDPOINT}#{uri}")
+        end
       end
 
       def use_ssl

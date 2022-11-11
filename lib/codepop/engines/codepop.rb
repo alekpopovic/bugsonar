@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-if Gem.loaded_specs.has_key?("rails")
+if Gem.loaded_specs.key?("rails")
   require "rails"
   require_relative "../middlewares/rails"
 

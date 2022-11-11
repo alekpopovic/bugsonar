@@ -13,6 +13,9 @@ if Gem.loaded_specs.has_key?("rails")
           @app = app
         end
 
+        # rubocop:disable Metrics/MethodLength
+        # rubocop:disable Lint/RescueException
+        # rubocop:disable Metrics/AbcSize
         def call(env)
           @app.call(env)
         rescue Exception => e
@@ -24,12 +27,15 @@ if Gem.loaded_specs.has_key?("rails")
             runtime_version: {
               rails: Gem.loaded_specs["rails"].version,
               rack: Gem.loaded_specs["rake"].version,
-              ruby: RUBY_VERSION,
-            },
+              ruby: RUBY_VERSION
+            }
           }
           notify(payload)
           raise e
         end
+        # rubocop:enable Metrics/MethodLength
+        # rubocop:enable Lint/RescueException
+        # rubocop:enable Metrics/AbcSize
       end
     end
   end

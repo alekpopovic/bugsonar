@@ -13,6 +13,8 @@ if Gem.loaded_specs.has_key?("sinatra")
           @app = app
         end
 
+        # rubocop:disable Metrics/MethodLength
+        # rubocop:disable Lint/RescueException
         def call(env)
           @app.call(env)
         rescue Exception => e
@@ -29,6 +31,8 @@ if Gem.loaded_specs.has_key?("sinatra")
           notify(payload)
           raise e
         end
+        # rubocop:enable Metrics/MethodLength
+        # rubocop:enable Lint/RescueException
       end
     end
   end

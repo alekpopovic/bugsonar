@@ -5,6 +5,9 @@ module Codepop
   module Client
     # Api
     class Api
+      # rubocop:disable Metrics/AbcSize
+      # rubocop:disable Metrics/MethodLength
+      # rubocop:disable Metrics/CyclomaticComplexity
       def request(uri, method, body = nil)
         http = Net::HTTP.new(Config.api(uri).host, Config.api(uri).port)
         http.use_ssl = Config.use_ssl
@@ -35,6 +38,9 @@ module Codepop
 
         yield(obj) if block_given?
       end
+      # rubocop:enable Metrics/AbcSize
+      # rubocop:enable Metrics/MethodLength
+      # rubocop:enable Metrics/CyclomaticComplexity
     end
   end
 end
