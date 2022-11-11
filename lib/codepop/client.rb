@@ -10,7 +10,7 @@ module Codepop
       def request(uri, method, body = nil)
         uri = URI.parse("https://api.codepop.co.rs/v1/#{uri}")
         http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = false
+        http.use_ssl = true
         case method
         when "POST"
           request = Net::HTTP::Post.new(uri)
