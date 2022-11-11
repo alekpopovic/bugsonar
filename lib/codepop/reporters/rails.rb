@@ -15,7 +15,7 @@ module Codepop
                                   errorBacktrace: event[:error_backtrace],
                                   errorFullBacktrace: event[:error_full_backtrace],
                                   runtimeVersion: event[:runtime_version],
-                                  applicationEnvironment: ENV.fetch("RACK_ENV", nil)
+                                  applicationEnvironment: ENV["RACK_ENV"]
                                 })
           end
         end

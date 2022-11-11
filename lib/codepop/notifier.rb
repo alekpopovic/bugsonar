@@ -6,13 +6,11 @@ module Codepop
     # rubocop:disable Metrics/MethodLength
     def auto_notify(args = {})
       params = {
-        data: {
-          errorClass: args[:errorClass],
-          errorBacktrace: args[:errorBacktrace],
-          errorFullBacktrace: args[:errorFullBacktrace],
-          runtimeVersion: args[:runtimeVersion],
-          applicationEnvironment: args[:applicationEnvironment]
-        }
+        errorClass: args[:errorClass],
+        errorBacktrace: args[:errorBacktrace],
+        errorFullBacktrace: args[:errorFullBacktrace],
+        runtimeVersion: args[:runtimeVersion],
+        applicationEnvironment: args[:applicationEnvironment]
       }
 
       Codepop::Client::Api.new.request(

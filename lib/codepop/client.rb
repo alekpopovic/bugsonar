@@ -7,40 +7,25 @@ module Codepop
     class Api
       # rubocop:disable Metrics/AbcSize
       # rubocop:disable Metrics/MethodLength
-      # rubocop:disable Metrics/CyclomaticComplexity
       def request(uri, method, body = nil)
-        http = Net::HTTP.new(Config.api(uri).host, Config.api(uri).port)
-        http.use_ssl = Config.use_ssl
-
+        uri = URI.parse("https://api.codepop.co.rs/v1/#{uri}")
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = false
         case method
         when "POST"
           request = Net::HTTP::Post.new(uri)
-        when "PUT"
-          request = Net::HTTP::Put.new(uri)
-        when "DELETE"
-          request = Net::HTTP::Delete.new(uri)
-        when "PATCH"
-          request = Net::HTTP::Patch.new(uri)
-        when "GET"
-          request = Net::HTTP::Get.new(uri)
         else
           raise Error, Codepop::Error::API_METHOD_ERROR
         end
-
         request["Content-Type"] = "application/json"
         request["Api-Key"] = Codepop.config.api_key
-
-        request.body = body.to_json if body
-
+        request.body = { data: body }.to_json if body
         response = http.request(request)
-
         obj = JSON.parse(response.read_body)
-
         yield(obj) if block_given?
       end
       # rubocop:enable Metrics/AbcSize
       # rubocop:enable Metrics/MethodLength
-      # rubocop:enable Metrics/CyclomaticComplexity
     end
   end
 end
