@@ -47,5 +47,5 @@ lint:
 
 ## release: run release
 .PHONY: release
-lint:
+release:
 	rake release
