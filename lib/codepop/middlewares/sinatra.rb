@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-if Gem.loaded_specs.has_key?("sinatra")
+if Gem.loaded_specs.key?("sinatra")
   require_relative "../reporters/rack"
 
   module Codepop

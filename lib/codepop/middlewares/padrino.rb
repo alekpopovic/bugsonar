@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-if Gem.loaded_specs.has_key?("padrino")
+if Gem.loaded_specs.key?("padrino")
   require_relative "../reporters/rack"
 
   module Codepop

@@ -10,23 +10,19 @@ module Codepop
 
     class << self
       def api(uri)
-        case ENV["RACK_ENV"]
+        case ENV.fetch("RACK_ENV", nil)
         when "production"
           URI.parse("#{PRODUCTION_API_ENDPOINT}#{uri}")
         when "development"
-          URI.parse("#{DEVELOPMENT_API_ENDPOINT}#{uri}")
-        else
           URI.parse("#{DEVELOPMENT_API_ENDPOINT}#{uri}")
         end
       end
 
       def use_ssl
-        case ENV["RACK_ENV"]
+        case ENV.fetch("RACK_ENV", nil)
         when "production"
           true
         when "development"
-          false
-        else
           false
         end
       end
