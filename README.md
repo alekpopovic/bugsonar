@@ -1,4 +1,4 @@
-# codepop-ruby
+# bugsify_ruby
 
 ## Error monitoring & exception reporter for Ruby
 
@@ -7,7 +7,7 @@
 Add gem to the application's Gemfile by executing:
 
 ```sh
-gem 'codepop'
+gem 'bugsify'
 ```
 
 Setup codepop gem by executing:
