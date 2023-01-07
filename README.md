@@ -15,17 +15,17 @@ Setup codepop gem by executing:
 If you using rails:
 
 ```sh
-rails g codepop:install
+rails g bugsify:install
 ```
 
-Or create config file codepop.rb
+Or create config file bugsify.rb
 
 ## Usage
 
-Setup api_key from project page https://app.codepop.co.rs/projects/YOUR_PROJECT
+Setup api_key from project page https://app.bugsify.io/projects/YOUR_PROJECT
 
 ```sh
-Codepop.configure do |config|
+Bugsify.configure do |config|
   config.api_key = "YOUR_PROJECT_API_KEY"
 end
 ```
