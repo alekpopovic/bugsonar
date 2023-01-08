@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-if Gem.loaded_specs.key?("padrino")
-  require_relative "../reporters/rack"
+if Gem.loaded_specs.key?("rails")
+  require_relative "../reporters/rails"
 
-  module Codepop
+  module Bugsify
     module Middleware
-      # Padrino
-      class Padrino
-        include Codepop::Reporter::Rack
+      # Rails
+      class Rails
+        include Reporter::Rails
 
         def initialize(app)
           @app = app
@@ -15,15 +15,17 @@ if Gem.loaded_specs.key?("padrino")
 
         # rubocop:disable Metrics/MethodLength
         # rubocop:disable Lint/RescueException
+        # rubocop:disable Metrics/AbcSize
         def call(env)
           @app.call(env)
         rescue Exception => e
+          trace = e.backtrace.select { |l| l.start_with?(Rack::Directory.new("").root) }.join("\n    ")
           payload = {
             error_class: e.class,
-            error_backtrace: e,
-            error_full_backtrace: "\n#{e.class}\n#{e.message}\n#{e}",
+            error_backtrace: "\n#{e.class}\n#{e.message}\n#{trace}",
+            error_full_backtrace: e.backtrace.select { |l| l }.join("\n    "),
             runtime_version: {
-              padrino: Gem.loaded_specs["padrino"].version,
+              rails: Gem.loaded_specs["rails"].version,
               rack: Gem.loaded_specs["rake"].version,
               ruby: RUBY_VERSION
             }
@@ -33,6 +35,7 @@ if Gem.loaded_specs.key?("padrino")
         end
         # rubocop:enable Metrics/MethodLength
         # rubocop:enable Lint/RescueException
+        # rubocop:enable Metrics/AbcSize
       end
     end
   end

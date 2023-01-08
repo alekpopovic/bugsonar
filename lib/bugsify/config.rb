@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require "uri"
-
-module Codepop
+module Bugsify
   # Config
   module Config
     def self.included(host_class)

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    codepop (1.0.1)
+    bugsify (1.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -122,6 +122,8 @@ GEM
       net-protocol
     nio4r (2.5.8)
     nokogiri (1.13.9-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     padrino (0.15.1)
       padrino-admin (= 0.15.1)
@@ -261,10 +263,11 @@ GEM
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   awesome_print (~> 1.9, >= 1.9.2)
-  codepop!
+  bugsify!
   debug (~> 1.6, >= 1.6.2)
   padrino (~> 0.15.1)
   rails (~> 7.0, >= 7.0.3.1)

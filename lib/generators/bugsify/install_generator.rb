@@ -3,16 +3,16 @@
 if Gem.loaded_specs.key?("rails")
   require "rails/generators"
 
-  module Codepop
+  module Bugsify
     module Generators
       # Install
       class Install < Rails::Generators::Base
         # rubocop:disable Layout/HeredocIndentation
         def create_helper_file
-          create_file "config/initializers/codepop.rb", <<-FILE
+          create_file "config/initializers/bugsify.rb", <<-FILE
 # frozen_string_literal: true
 
-Codepop.configure do |config|
+Bugsify.configure do |config|
   config.api_key = ""
 end
           FILE

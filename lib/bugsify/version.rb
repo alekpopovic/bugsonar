@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module Codepop
+module Bugsify
   VERSION = "1.0.2"
 end

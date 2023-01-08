@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "codepop"
+require "bugsify"
 require "irb"
 
 def reload!(print = true)

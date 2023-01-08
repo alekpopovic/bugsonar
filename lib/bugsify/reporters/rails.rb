@@ -1,16 +1,20 @@
 # frozen_string_literal: true
 
-module Codepop
+require_relative "../notifier"
+
+module Bugsify
   module Reporter
     # Rails
     module Rails
+      include Notifier
+
       # rubocop:disable Metrics/MethodLength
       def notify(event)
         semaphore = Thread::Mutex.new
 
         Thread.new do
           semaphore.synchronize do
-            Codepop.auto_notify({
+            auto_notify({
                                   errorClass: event[:error_class],
                                   errorBacktrace: event[:error_backtrace],
                                   errorFullBacktrace: event[:error_full_backtrace],

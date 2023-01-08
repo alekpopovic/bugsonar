@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Codepop do
+RSpec.describe Bugsify do
   it "has a version number" do
-    expect(Codepop::VERSION).not_to be nil
+    expect(Bugsify::VERSION).not_to be nil
   end
 
   it "does something useful" do

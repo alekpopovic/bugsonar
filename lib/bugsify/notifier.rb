@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-module Codepop
+require_relative "./client"
+
+module Bugsify
   # Error
   module Notifier
+    include Client
     # rubocop:disable Metrics/MethodLength
     def auto_notify(args = {})
       params = {
@@ -13,7 +16,7 @@ module Codepop
         applicationEnvironment: args[:applicationEnvironment]
       }
 
-      Codepop::Client::Api.new.request(
+      Api.new.request(
         "collectors/ruby",
         "POST",
         params,

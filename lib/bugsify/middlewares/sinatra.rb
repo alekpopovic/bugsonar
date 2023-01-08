@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-if Gem.loaded_specs.key?("rails")
-  require_relative "../reporters/rails"
+if Gem.loaded_specs.key?("sinatra")
+  require_relative "../reporters/rack"
 
-  module Codepop
+  module Bugsify
     module Middleware
-      # Rails
-      class Rails
-        include Codepop::Reporter::Rails
+      # Sinatra
+      class Sinatra
+        include Reporter::Rack
 
         def initialize(app)
           @app = app
@@ -15,17 +15,15 @@ if Gem.loaded_specs.key?("rails")
 
         # rubocop:disable Metrics/MethodLength
         # rubocop:disable Lint/RescueException
-        # rubocop:disable Metrics/AbcSize
         def call(env)
           @app.call(env)
         rescue Exception => e
-          trace = e.backtrace.select { |l| l.start_with?(Rack::Directory.new("").root) }.join("\n    ")
           payload = {
             error_class: e.class,
-            error_backtrace: "\n#{e.class}\n#{e.message}\n#{trace}",
-            error_full_backtrace: e.backtrace.select { |l| l }.join("\n    "),
+            error_backtrace: e,
+            error_full_backtrace: "\n#{e.class}\n#{e.message}\n#{e}",
             runtime_version: {
-              rails: Gem.loaded_specs["rails"].version,
+              padrino: Gem.loaded_specs["sinatra"].version,
               rack: Gem.loaded_specs["rake"].version,
               ruby: RUBY_VERSION
             }
@@ -35,7 +33,6 @@ if Gem.loaded_specs.key?("rails")
         end
         # rubocop:enable Metrics/MethodLength
         # rubocop:enable Lint/RescueException
-        # rubocop:enable Metrics/AbcSize
       end
     end
   end
