@@ -1,31 +1,35 @@
 # frozen_string_literal: true
 
-require_relative "./config"
+require "uri"
+require "net/http"
+require "json"
 
 module Bugsify
   # Client
   module Client
     # Api
     class Api
-      include Config
       # rubocop:disable Metrics/AbcSize
       # rubocop:disable Metrics/MethodLength
       def request(uri, method, body = nil)
-        uri = URI.parse("https://api.bugsify.io/v1/#{uri}")
+        # https://api.bugsify.io
+        uri = URI.parse("http://localhost:3001/v1/#{uri}")
         http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = true
+        http.use_ssl = false
 
         klass = "Net::HTTP::#{method}"
         constantized = Object.const_get(klass)
 
         request = constantized.new(uri)
         request["Content-Type"] = "application/json"
-        request["Api-Key"] = config.api_key
+        request["Api-Key"] = Bugsify.config.api_key
         request.body = { data: body }.to_json if body
 
         response = http.request(request)
 
-        obj = JSON.parse(response.read_body)
+        obj = JSON.pretty_generate(
+          JSON.parse(response.read_body)
+        )
 
         yield(obj) if block_given?
       end

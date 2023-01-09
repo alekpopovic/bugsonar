@@ -7,7 +7,7 @@ if Gem.loaded_specs.key?("sinatra")
     module Middleware
       # Sinatra
       class Sinatra
-        include Reporter::Rack
+        include Bugsify::Reporter::Rack
 
         def initialize(app)
           @app = app

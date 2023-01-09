@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "./client"
-
 module Bugsify
   # Error
   module Notifier
-    include Client
     # rubocop:disable Metrics/MethodLength
     def auto_notify(args = {})
       params = {
@@ -16,9 +13,9 @@ module Bugsify
         applicationEnvironment: args[:applicationEnvironment]
       }
 
-      Api.new.request(
+      Bugsify::Client::Api.new.request(
         "collectors/ruby",
-        "POST",
+        "Post",
         params,
         &method(:parse)
       )

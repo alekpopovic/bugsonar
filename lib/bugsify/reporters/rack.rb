@@ -1,14 +1,11 @@
 # frozen_string_literal: true
 
-require_relative "../notifier"
-
 module Bugsify
   module Reporter
     # Rack
     module Rack
-      include Notifier
       def notify(event)
-        auto_notify({
+        Bugsify.auto_notify({
                               errorClass: event[:error_class],
                               errorBacktrace: event[:error_backtrace],
                               errorFullBacktrace: event[:error_full_backtrace],

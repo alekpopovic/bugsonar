@@ -7,7 +7,7 @@ if Gem.loaded_specs.key?("padrino")
     module Middleware
       # Padrino
       class Padrino
-        include Reporter::Rack
+        include Bugsify::Reporter::Rack
 
         def initialize(app)
           @app = app

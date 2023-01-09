@@ -7,7 +7,7 @@ if Gem.loaded_specs.key?("rails")
     module Middleware
       # Rails
       class Rails
-        include Reporter::Rails
+        include Bugsify::Reporter::Rails
 
         def initialize(app)
           @app = app
