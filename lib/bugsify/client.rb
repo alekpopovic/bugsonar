@@ -12,10 +12,9 @@ module Bugsify
       # rubocop:disable Metrics/AbcSize
       # rubocop:disable Metrics/MethodLength
       def request(uri, method, body = nil)
-        # https://api.bugsify.io
-        uri = URI.parse("http://localhost:3001/v1/#{uri}")
+        uri = URI.parse("https://api.bugsify.io/v1/#{uri}")
         http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = false
+        http.use_ssl = true
 
         klass = "Net::HTTP::#{method}"
         constantized = Object.const_get(klass)
