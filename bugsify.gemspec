@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-require_relative "lib/bugsify/version"
+require_relative "lib/bugsify/config"
 
 Gem::Specification.new do |spec|
-  spec.name = "bugsify"
-  spec.version = Bugsify::VERSION
-  spec.authors = ["Aleksandar Popovic"]
-  spec.email = ["aleksandar.popovic@hotmail.com"]
+  spec.name = Bugsify::Config::NAME
+  spec.version = Bugsify::Config::VERSION
+  spec.authors = Bugsify::Config::AUTHORS
+  spec.email = Bugsify::Config::EMAIL
 
-  spec.summary = "Ruby notifier for bugsify.io"
-  spec.description = "Bugsify error monitoring & exception reporter for Ruby"
-  spec.homepage = "https://github.com/bugsify/bugsify_ruby"
-  spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.summary = Bugsify::Config::SUMMARY
+  spec.description = Bugsify::Config::DESCRIPTION
+  spec.homepage = Bugsify::Config::HOMEPAGE
+  spec.license = Bugsify::Config::LICENSE
+  spec.required_ruby_version = Bugsify::Config::REQUIRED_RUBY_VERSION
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/bugsify/bugsify_ruby"
-  spec.metadata["changelog_uri"] = "https://github.com/bugsify/bugsify_ruby/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = Bugsify::Config::SOURCE_CODE_URI
+  spec.metadata["changelog_uri"] = Bugsify::Config::CHANGELOG_URI
 
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|

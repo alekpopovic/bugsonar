@@ -1,11 +1,16 @@
 #!/usr/bin/env ruby
+
 # frozen_string_literal: true
 
 require "bundler/setup"
 require "bugsify"
 require "irb"
 
-def reload!(print = true)
+Bugsify.configure do |config|
+  config.api_key = "aI2Ja6Qk3og5uYEleeOnAYwS_fnXESpaIVn-xj3xzTc"
+end
+
+def reload!(print: true)
   puts "Reloading ..." if print
   root_dir = File.expand_path("..", __dir__)
   reload_dirs = %w[lib specs]

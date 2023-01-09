@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bugsify (1.0.2)
+    bugsify (1.0.3)
 
 GEM
   remote: https://rubygems.org/
