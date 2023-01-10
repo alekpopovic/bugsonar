@@ -9,7 +9,7 @@ module Bugsify
     def capture_exception(exception)
       raise "Argument #{exception} is not exception" unless exception.is_a?(Exception)
 
-      custom_error(exception)
+      manual(exception)
     end
 
     private
