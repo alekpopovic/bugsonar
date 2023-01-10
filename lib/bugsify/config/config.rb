@@ -27,7 +27,7 @@ module Bugsify
 
     specs = {
       name: "bugsify",
-      version: "1.0.3",
+      version: "1.0.5",
       authors: ["Aleksandar Popovic"],
       email: ["aleksandar.popovic@hotmail.com"],
       summary: "Ruby notifier for bugsify.io",
