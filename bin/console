@@ -6,6 +6,10 @@ require "bundler/setup"
 require "bugsify"
 require "irb"
 
+Bugsify.configure do |config|
+  config.api_key = ""
+end
+
 def reload!(print: true)
   puts "Reloading ..." if print
   root_dir = File.expand_path("..", __dir__)

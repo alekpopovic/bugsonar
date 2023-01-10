@@ -3,8 +3,19 @@
 module Bugsify
   # Error
   module Notifier
+    include Client
+    include Parser
+
+    def capture_exception(exception)
+      raise "Argument #{exception} is not exception" unless exception.is_a?(Exception)
+
+      custom_error(exception)
+    end
+
+    private
+
     # rubocop:disable Metrics/MethodLength
-    def auto_notify(args = {})
+    def auto_capture_exception(args = {})
       params = {
         errorClass: args[:errorClass],
         errorBacktrace: args[:errorBacktrace],
@@ -13,7 +24,7 @@ module Bugsify
         applicationEnvironment: args[:applicationEnvironment]
       }
 
-      Bugsify::Client::Api.new.request(
+      Api.new.request(
         "collectors/ruby",
         "Post",
         params,
@@ -21,8 +32,6 @@ module Bugsify
       )
     end
     # rubocop:enable Metrics/MethodLength
-
-    private
 
     def parse(response)
       puts response

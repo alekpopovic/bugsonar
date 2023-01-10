@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/bugsify/config"
+require_relative "lib/bugsify/config/config"
 
 Gem::Specification.new do |spec|
   spec.name = Bugsify::Config::NAME

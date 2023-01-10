@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
-require "bugsify/config"
-require "bugsify/client"
-require "bugsify/notifier"
-require "bugsify/engines/bugsify"     if Gem.loaded_specs.key?("rails")
-require "bugsify/middlewares/rails"   if Gem.loaded_specs.key?("rails")
-require "bugsify/middlewares/sinatra" if Gem.loaded_specs.key?("sinatra")
-require "bugsify/middlewares/padrino" if Gem.loaded_specs.key?("padrino")
+require "bugsify/config/config"
+require "bugsify/client/client"
+require "bugsify/reporter/reporter"
+require "bugsify/parser/parser"
+require "bugsify/middleware/middleware"
+require "bugsify/notifier/notifier"
+require "bugsify/engine/bugsify"
 
 # Bugsify
 module Bugsify
   include Config
   include Client
+  include Reporter
+  include Parser
   extend Notifier
 end
