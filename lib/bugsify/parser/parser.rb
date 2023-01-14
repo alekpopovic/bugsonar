@@ -31,7 +31,6 @@ module Bugsify
     end
 
     def manual(e)
-      debugger
       payload = {
         error_class: e.class,
         error_backtrace: e,
