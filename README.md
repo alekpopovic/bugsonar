@@ -1,4 +1,4 @@
-# bugsify_ruby
+# bugsify-ruby
 
 ## Error monitoring & exception reporter for Ruby
 
