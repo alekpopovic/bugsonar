@@ -50,4 +50,7 @@ Everyone interacting in the Bugsify project's codebases, issue trackers, chat ro
 
 ### Other Apps
 
-. https://github.com/alekpopovic/bugsify-api
+https://github.com/alekpopovic/bugsify-api
+https://github.com/alekpopovic/bugsify-app
+https://github.com/alekpopovic/bugsify-docs
+https://github.com/alekpopovic/bugsify-frontend-app
