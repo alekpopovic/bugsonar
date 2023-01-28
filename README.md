@@ -50,9 +50,9 @@ Everyone interacting in the Bugsify project's codebases, issue trackers, chat ro
 
 ### Other Apps
 
-| Apps          | Links                                                        |
-| ------------- | ------------------------------------------------------------ |
-| Api           | [https://github.com/alekpopovic/bugsify-api][pldb]           |
-| Dashboard App | [https://github.com/alekpopovic/bugsify-dashboard-app][plgh] |
-| FrontendApp   | [https://github.com/alekpopovic/bugsify-frontend-app][plgd]  |
-| Docs App      | [https://github.com/alekpopovic/bugsify-docs][plod]          |
+| Apps          | Links                                                  |
+| ------------- | ------------------------------------------------------ |
+| Api           | [https://github.com/alekpopovic/bugsify-api]           |
+| Dashboard App | [https://github.com/alekpopovic/bugsify-dashboard-app] |
+| FrontendApp   | [https://github.com/alekpopovic/bugsify-frontend-app]  |
+| Docs App      | [https://github.com/alekpopovic/bugsify-docs]          |
