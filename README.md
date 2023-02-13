@@ -1,5 +1,7 @@
 # bugsify-ruby
 
+[![Gem Version](https://badge.fury.io/rb/bugsify.svg)](https://badge.fury.io/rb/bugsify)
+
 ## Error monitoring & exception reporter for Ruby
 
 ## Installation
