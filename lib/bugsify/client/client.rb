@@ -12,7 +12,7 @@ module Bugsify
       # rubocop:disable Metrics/AbcSize
       # rubocop:disable Metrics/MethodLength
       def request(uri, method, body = nil)
-        uri = URI.parse("https://api.bugsify.io/v1/#{uri}")
+        uri = URI.parse("https://server.codepop.co.rs/collectors/#{uri}")
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = true
 

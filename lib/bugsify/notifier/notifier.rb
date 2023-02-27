@@ -24,7 +24,7 @@ module Bugsify
       }
 
       Api.new.request(
-        "collectors/ruby",
+        "ruby",
         "Post",
         params,
         &method(:parse)

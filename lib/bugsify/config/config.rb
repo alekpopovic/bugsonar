@@ -27,16 +27,16 @@ module Bugsify
 
     specs = {
       name: "bugsify",
-      version: "1.0.5",
+      version: "1.0.6",
       authors: ["Aleksandar Popovic"],
       email: ["aleksandar.popovic@hotmail.com"],
-      summary: "Ruby notifier for bugsify.io",
+      summary: "Ruby notifier for codepop.co.rs",
       description: "Bugsify error monitoring & exception reporter for Ruby",
-      homepage: "https://github.com/bugsify/bugsify_ruby",
+      homepage: "https://github.com/CodepopTechnology/BugsifyRuby",
       license: "MIT",
       required_ruby_version: ">= 2.6.0",
-      source_code_uri: "https://github.com/bugsify/bugsify_ruby",
-      changelog_uri: "https://github.com/bugsify/bugsify_ruby/blob/main/CHANGELOG.md"
+      source_code_uri: "https://github.com/CodepopTechnology/BugsifyRuby",
+      changelog_uri: "https://github.com/CodepopTechnology/BugsifyRuby/blob/main/CHANGELOG.md"
     }
 
     specs.each { |k, v| const_set(k.upcase, v) }
