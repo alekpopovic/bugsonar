@@ -35,7 +35,7 @@ module Bugsify
       homepage: "https://github.com/codepoptech/bugsify-ruby",
       license: "MIT",
       required_ruby_version: ">= 2.6.0",
-      source_code_uri: "https://github.com/codepopech/bugsify-ruby",
+      source_code_uri: "https://github.com/codepoptech/bugsify-ruby",
       changelog_uri: "https://github.com/codepoptech/bugsify-ruby/blob/main/CHANGELOG.md"
     }
 
