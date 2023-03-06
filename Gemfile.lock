@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bugsify (1.0.7)
+    bugsify (2.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -121,9 +121,9 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.9-arm64-darwin)
+    nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.9-x86_64-linux)
+    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     padrino (0.15.1)
       padrino-admin (= 0.15.1)
@@ -278,4 +278,4 @@ DEPENDENCIES
   solargraph
 
 BUNDLED WITH
-   2.3.24
+   2.4.7
