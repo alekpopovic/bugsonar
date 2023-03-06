@@ -12,7 +12,7 @@ module Bugsify
       # rubocop:disable Metrics/AbcSize
       # rubocop:disable Metrics/MethodLength
       def request(uri, method, body = nil)
-        uri = URI.parse("https://server.codepop.co.rs/collectors/#{uri}")
+        uri = URI.parse("https://api.codepop.co.rs/v1/#{uri}")
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = true
 
@@ -21,8 +21,8 @@ module Bugsify
 
         request = constantized.new(uri)
         request["Content-Type"] = "application/json"
-        request["Api-Key"] = Bugsify.config.api_key
-        request.body = { data: body }.to_json if body
+        request["apikey"] = Bugsify.config.api_key
+        request.body = { payload: body }.to_json if body
 
         response = http.request(request)
 

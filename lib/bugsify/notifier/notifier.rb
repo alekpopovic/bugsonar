@@ -24,7 +24,7 @@ module Bugsify
       }
 
       Api.new.request(
-        "ruby",
+        "events",
         "Post",
         params,
         &method(:parse)
