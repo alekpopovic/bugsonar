@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module Bugsify
-  # Middleware
   class Middleware
     include Parser
 

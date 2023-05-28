@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-require "debug"
-
 module Bugsify
-  # Rails
   module Parser
     include Reporter
 
@@ -13,7 +10,7 @@ module Bugsify
         error_class: e.class,
         error_backtrace: "\n#{e.class}\n#{e.message}\n#{trace}",
         error_full_backtrace: e.backtrace.select { |l| l }.join("\n    "),
-        runtime_version: runtime_version
+        runtime_version: runtime_version,
       }
       report(payload)
       raise e
@@ -24,7 +21,7 @@ module Bugsify
         error_class: e.class,
         error_backtrace: e,
         error_full_backtrace: "\n#{e.class}\n#{e.message}\n#{e}",
-        runtime_version: runtime_version
+        runtime_version: runtime_version,
       }
       report(payload)
       raise e
@@ -34,7 +31,7 @@ module Bugsify
       payload = {
         error_class: e.class,
         error_backtrace: e,
-        runtime_version: runtime_version
+        runtime_version: runtime_version,
       }
       report(payload)
       raise e
@@ -43,12 +40,12 @@ module Bugsify
     private
 
     def runtime_version
-      { 
+      {
         ruby_version: RUBY_VERSION,
         ruby_release_date: RUBY_RELEASE_DATE,
         ruby_platform: RUBY_PLATFORM,
         load_path: $LOAD_PATH,
-        env: ENV
+        env: ENV,
       }
     end
   end

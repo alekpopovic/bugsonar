@@ -13,7 +13,7 @@ end
 def reload!(print: true)
   puts "Reloading ..." if print
   root_dir = File.expand_path("..", __dir__)
-  reload_dirs = %w[lib specs]
+  reload_dirs = ["lib", "specs"]
   reload_dirs.each do |dir|
     Dir.glob("#{root_dir}/#{dir}/**/*.rb").each { |f| load(f) }
   end

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 module Bugsify
-  # Config
   module Config
-    def self.included(host_class)
-      host_class.extend ClassMethods
+    class << self
+      def included(host_class)
+        host_class.extend(ClassMethods)
+      end
     end
 
-    # ClassMethods
     module ClassMethods
       def config
         @config ||= Configuration.new
@@ -20,7 +20,6 @@ module Bugsify
 
     extend ClassMethods
 
-    # Configuration
     class Configuration
       attr_accessor :api_key
     end
@@ -36,7 +35,7 @@ module Bugsify
       license: "MIT",
       required_ruby_version: ">= 2.6.0",
       source_code_uri: "https://github.com/codepoptech/bugsify-ruby",
-      changelog_uri: "https://github.com/codepoptech/bugsify-ruby/blob/main/CHANGELOG.md"
+      changelog_uri: "https://github.com/codepoptech/bugsify-ruby/blob/main/CHANGELOG.md",
     }
 
     specs.each { |k, v| const_set(k.upcase, v) }

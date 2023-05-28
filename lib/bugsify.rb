@@ -8,7 +8,6 @@ require "bugsify/middleware/middleware"
 require "bugsify/notifier/notifier"
 require "bugsify/engine/bugsify"
 
-# Bugsify
 module Bugsify
   include Config
   include Client

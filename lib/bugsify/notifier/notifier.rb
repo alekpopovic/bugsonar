@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module Bugsify
-  # Error
   module Notifier
     include Client
 
@@ -13,14 +12,13 @@ module Bugsify
 
     private
 
-    # rubocop:disable Metrics/MethodLength
     def auto_capture_exception(args = {})
       params = {
         errorClass: args[:errorClass],
         errorBacktrace: args[:errorBacktrace],
         errorFullBacktrace: args[:errorFullBacktrace],
         runtimeVersion: args[:runtimeVersion],
-        applicationEnvironment: args[:applicationEnvironment]
+        applicationEnvironment: args[:applicationEnvironment],
       }
 
       Api.new.request(
@@ -30,7 +28,6 @@ module Bugsify
         &method(:parse)
       )
     end
-    # rubocop:enable Metrics/MethodLength
 
     def parse(response)
       puts response
