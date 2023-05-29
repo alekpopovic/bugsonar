@@ -3,8 +3,8 @@
 module Bugsify
   module Config
     class << self
-      def included(host_class)
-        host_class.extend(ClassMethods)
+      def included(base)
+        base.extend(ClassMethods)
       end
     end
 
