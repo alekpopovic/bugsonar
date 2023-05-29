@@ -18,8 +18,6 @@ module Bugsify
       end
     end
 
-    extend ClassMethods
-
     class Configuration
       attr_accessor :api_key
     end
