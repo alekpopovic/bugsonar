@@ -1,4 +1,4 @@
-# bugsify-ruby
+# bugsonar-ruby
 
 [![Gem Version](https://badge.fury.io/rb/bugsify.svg)](https://badge.fury.io/rb/bugsify)
 
