@@ -9,25 +9,25 @@
 Add gem to the application's Gemfile by executing:
 
 ```sh
-gem 'bugsify'
+gem 'bugsonar'
 ```
 
-Setup bugsify gem by executing:
+Setup bugsonar gem by executing:
 
 If you using rails:
 
 ```sh
-rails g bugsify:install
+rails g bugsonar:install
 ```
 
-Or create config file bugsify.rb
+Or create config file bugsonar.rb
 
 ## Usage
 
-Setup api_key from project page https://app.bugsify.io/projects/YOUR_PROJECT
+Setup api_key from project page https://app.bugsonar.com/projects/YOUR_PROJECT
 
 ```sh
-Bugsify.configure do |config|
+Bugsonar.configure do |config|
   config.api_key = "YOUR_PROJECT_API_KEY"
 end
 ```
