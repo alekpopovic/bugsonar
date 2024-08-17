@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Bugsify
+module Bugsonar
   module Config
     class << self
       def included(base)
@@ -23,17 +23,17 @@ module Bugsify
     end
 
     specs = {
-      name: "bugsify",
+      name: "bugsonar",
       version: "2.0.0",
       authors: ["Aleksandar Popovic"],
       email: ["aleksandar.popovic@hotmail.com"],
-      summary: "Ruby notifier for codepop.co.rs",
-      description: "Bugsify error monitoring & exception reporter for Ruby",
-      homepage: "https://github.com/codepoptech/bugsify-ruby",
+      summary: "Ruby notifier for bugsonar.com",
+      description: "Bugsonar error monitoring & exception reporter for Ruby",
+      homepage: "https://github.com/bugsonar/bugsonar-ruby",
       license: "MIT",
       required_ruby_version: ">= 2.6.0",
-      source_code_uri: "https://github.com/codepoptech/bugsify-ruby",
-      changelog_uri: "https://github.com/codepoptech/bugsify-ruby/blob/main/CHANGELOG.md",
+      source_code_uri: "https://github.com/bugsonar/bugsonar-ruby",
+      changelog_uri: "https://github.com/bugsonar/bugsonar-ruby/blob/main/CHANGELOG.md",
     }
 
     specs.each { |k, v| const_set(k.upcase, v) }

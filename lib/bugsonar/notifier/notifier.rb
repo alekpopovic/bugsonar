@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-module Bugsify
+module Bugsonar
   module Notifier
     include Client
+    include Parser
 
     def capture_exception(exception)
       raise "Argument #{exception} is not exception" unless exception.is_a?(Exception)

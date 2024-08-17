@@ -3,15 +3,15 @@
 if Gem.loaded_specs.key?("rails")
   require "rails/generators"
 
-  module Bugsify
+  module Bugsonar
     module Generators
       class Install < Rails::Generators::Base
         # rubocop:disable Layout/HeredocIndentation
         def create_helper_file
-          create_file("config/initializers/bugsify.rb", <<-FILE)
+          create_file("config/initializers/bugsonar.rb", <<-FILE)
 # frozen_string_literal: true
 
-Bugsify.configure do |config|
+Bugsonar.configure do |config|
   config.api_key = ""
 end
           FILE

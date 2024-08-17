@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Bugsify
+module Bugsonar
   module Parser
     include Reporter
 

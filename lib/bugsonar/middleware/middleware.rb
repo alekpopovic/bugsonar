@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Bugsify
+module Bugsonar
   class Middleware
     include Parser
 

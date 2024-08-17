@@ -4,20 +4,20 @@ require "uri"
 require "net/http"
 require "json"
 
-module Bugsify
+module Bugsonar
   module Client
     class Api
-      def request(uri, method, body = nil)
-        uri = URI.parse("https://api.codepop.co.rs/v1/#{uri}")
+      def request(endpoint, method, body = nil)
+        uri = URI.parse("http://localhost:3001/v1/#{endpoint}")
         http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = true
+        http.use_ssl = false
 
         klass = "Net::HTTP::#{method}"
         constantized = Object.const_get(klass)
 
         request = constantized.new(uri)
         request["Content-Type"] = "application/json"
-        request["apikey"] = Bugsify.config.api_key
+        request["apikey"] = Bugsonar.config.api_key
         request.body = { payload: body }.to_json if body
 
         response = http.request(request)
