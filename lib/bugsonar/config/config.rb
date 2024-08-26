@@ -19,21 +19,21 @@ module Bugsonar
     end
 
     class Configuration
-      attr_accessor :api_key
+      attr_accessor :api_url, :api_key_name, :api_key
     end
 
     specs = {
       name: "bugsonar",
       version: "2.0.0",
       authors: ["Aleksandar Popovic"],
-      email: ["aleksandar.popovic@hotmail.com"],
-      summary: "Ruby notifier for bugsonar.com",
+      email: ["aleksandar.popovic@linux.com"],
+      summary: "Ruby notifier for custom monitoring apps",
       description: "Bugsonar error monitoring & exception reporter for Ruby",
-      homepage: "https://github.com/bugsonar/bugsonar-ruby",
+      homepage: "https://github.com/alekpopovic/bugsonar",
       license: "MIT",
       required_ruby_version: ">= 2.6.0",
-      source_code_uri: "https://github.com/bugsonar/bugsonar-ruby",
-      changelog_uri: "https://github.com/bugsonar/bugsonar-ruby/blob/main/CHANGELOG.md",
+      source_code_uri: "https://github.com/alekpopovic/bugsonar",
+      changelog_uri: "https://github.com/alekpopovic/bugsonar/blob/main/CHANGELOG.md",
     }
 
     specs.each { |k, v| const_set(k.upcase, v) }

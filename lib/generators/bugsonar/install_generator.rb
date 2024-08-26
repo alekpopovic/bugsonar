@@ -12,6 +12,8 @@ if Gem.loaded_specs.key?("rails")
 # frozen_string_literal: true
 
 Bugsonar.configure do |config|
+  config.api_url = ""
+  config.api_key_name = ""
   config.api_key = ""
 end
           FILE

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bugsify (2.0.0)
+    bugsonar (2.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -167,7 +167,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  bugsify!
+  bugsonar!
   debug
   padrino
   rails

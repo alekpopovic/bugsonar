@@ -1,4 +1,4 @@
-# bugsonar-ruby
+# bugsonar
 
 [![Gem Version](https://badge.fury.io/rb/bugsonar.svg)](https://badge.fury.io/rb/bugsonar)
 
@@ -38,12 +38,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/bugsonar/bugsonar_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/bugsonar/bugsonar_ruby/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/alekpopovic/bugsonar. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/alekpopovic/bugsonar/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://github.com/bugsonar/bugsonar_ruby/blob/main/LICENSE.txt).
+The gem is available as open source under the terms of the [MIT License](https://github.com/alekpopovic/bugsonar/blob/main/LICENSE.txt).
 
 ## Code of Conduct
 
-Everyone interacting in the bugsonar project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/bugsonar/bugsonar_ruby/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the bugsonar project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/alekpopovic/bugsonar/blob/main/CODE_OF_CONDUCT.md).

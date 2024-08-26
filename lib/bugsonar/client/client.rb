@@ -7,8 +7,8 @@ require "json"
 module Bugsonar
   module Client
     class Api
-      def request(endpoint, method, body = nil)
-        uri = URI.parse("http://localhost:3001/v1/#{endpoint}")
+      def request(method, body = nil)
+        uri = URI.parse("#{Bugsonar.config.api_url}")
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = false
 
@@ -17,7 +17,7 @@ module Bugsonar
 
         request = constantized.new(uri)
         request["Content-Type"] = "application/json"
-        request["apikey"] = Bugsonar.config.api_key
+        request["#{Bugsonar.config.api_key_name}"] = Bugsonar.config.api_key
         request.body = { payload: body }.to_json if body
 
         response = http.request(request)

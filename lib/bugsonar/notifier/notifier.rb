@@ -23,7 +23,6 @@ module Bugsonar
       }
 
       Api.new.request(
-        "events",
         "Post",
         params,
         &method(:parse)
