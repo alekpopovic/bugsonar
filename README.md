@@ -26,7 +26,9 @@ Or create config file bugsonar.rb
 
 ```sh
 Bugsonar.configure do |config|
-  config.api_key = "YOUR_PROJECT_API_KEY"
+  config.api_url = "Your errors collector api url"
+  config.api_key_name = "Api key request header name"
+  config.api_key = "Api key"
 end
 ```
 
