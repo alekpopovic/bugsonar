@@ -3,10 +3,12 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "bugsify"
+require "bugsonar"
 require "irb"
 
-Bugsify.configure do |config|
+Bugsonar.configure do |config|
+  config.api_url = ""
+  config.api_key_name = ""
   config.api_key = ""
 end
 

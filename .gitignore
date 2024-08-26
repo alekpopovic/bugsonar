@@ -11,3 +11,8 @@
 .rspec_status
 .idea
 .irb_history
+
+/.bundle/
+/vendor/*
+
+.env
