@@ -24,8 +24,6 @@ Or create config file bugsonar.rb
 
 ## Usage
 
-Setup api_key from project page https://app.bugsonar.com/projects/YOUR_PROJECT
-
 ```sh
 Bugsonar.configure do |config|
   config.api_key = "YOUR_PROJECT_API_KEY"
