@@ -5,11 +5,12 @@
 require "bundler/setup"
 require "bugsonar"
 require "irb"
+require "dotenv"
+
+Dotenv.load
 
 Bugsonar.configure do |config|
-  config.api_url = ""
-  config.api_key_name = ""
-  config.api_key = ""
+  config.api_key = ENV["API_KEY"]
 end
 
 def reload!(print: true)

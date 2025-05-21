@@ -19,7 +19,7 @@ module Bugsonar
     end
 
     class Configuration
-      attr_accessor :api_url, :api_key_name, :api_key
+      attr_accessor :api_key
     end
 
     specs = {

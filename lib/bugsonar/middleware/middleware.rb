@@ -10,7 +10,7 @@ module Bugsonar
 
     def call(env)
       @app.call(env)
-    rescue Exception => e
+    rescue => e
       Gem.loaded_specs.key?("rails") ? rails(e) : rack(e)
     end
   end

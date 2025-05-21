@@ -8,16 +8,18 @@ module Bugsonar
   module Client
     class Api
       def request(method, body = nil)
-        uri = URI.parse("#{Bugsonar.config.api_url}")
+        api_url = ENV["DEV"] == "TRUE" ? "http://localhost:3000" : "https://api.bugsonar.com"
+
+        uri = URI.parse("#{api_url}/v2/collectors/ruby")
         http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = false
+        http.use_ssl = ENV["DEV"] == "TRUE" ? false : true
 
         klass = "Net::HTTP::#{method}"
         constantized = Object.const_get(klass)
 
         request = constantized.new(uri)
         request["Content-Type"] = "application/json"
-        request["#{Bugsonar.config.api_key_name}"] = Bugsonar.config.api_key
+        request["X-Api-Key"] = Bugsonar.config.api_key
         request.body = { payload: body }.to_json if body
 
         response = http.request(request)
