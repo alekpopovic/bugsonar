@@ -8,11 +8,11 @@ module Bugsonar
   module Client
     class Api
       def request(method, body = nil)
-        api_url = ENV["DEV"] == "TRUE" ? "http://localhost:3000" : "https://api.bugsonar.com"
+        api_url = ENV["BUGSONAR_DEV_MODE"] == "TRUE" ? "http://localhost:3000" : "https://api.bugsonar.com"
 
         uri = URI.parse("#{api_url}/v2/collectors/ruby")
         http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = ENV["DEV"] == "TRUE" ? false : true
+        http.use_ssl = ENV["BUGSONAR_DEV_MODE"] == "TRUE" ? false : true
 
         klass = "Net::HTTP::#{method}"
         constantized = Object.const_get(klass)
