@@ -10,11 +10,6 @@
     "editor.formatOnSave": true
   },
   "ruby.rubocop.useBundler": true,
-  "ruby.rubocop.executePath": "/home/popac/.rbenv/shims/",
-   "[erb]": {
-    "editor.defaultFormatter": "aliariff.vscode-erb-beautify",
-    "editor.formatOnSave": true
-  },
   "files.exclude": {
     "**/.git": true
   }
