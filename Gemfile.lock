@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bugsonar (2.0.0)
+    bugsonar (0.0.1)
 
 GEM
   remote: https://rubygems.org/
