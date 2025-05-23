@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/bugsonar.svg)](https://badge.fury.io/rb/bugsonar)
 
-## Error monitoring & exception reporter for Ruby
+## Error monitoring & exception reporter for Ruby apps
 
 ## Installation
 

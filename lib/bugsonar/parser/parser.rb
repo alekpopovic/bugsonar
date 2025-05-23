@@ -45,7 +45,6 @@ module Bugsonar
         ruby_release_date: RUBY_RELEASE_DATE,
         ruby_platform: RUBY_PLATFORM,
         load_path: $LOAD_PATH,
-        env: ENV,
       }
     end
   end

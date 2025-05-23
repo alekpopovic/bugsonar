@@ -2,6 +2,7 @@
 
 require "bugsonar/config/config"
 require "bugsonar/client/client"
+require "bugsonar/environment/environment"
 require "bugsonar/reporter/reporter"
 require "bugsonar/parser/parser"
 require "bugsonar/middleware/middleware"

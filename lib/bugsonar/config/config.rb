@@ -24,16 +24,16 @@ module Bugsonar
 
     specs = {
       name: "bugsonar",
-      version: "2.0.0",
+      version: "0.0.1",
       authors: ["Aleksandar Popovic"],
       email: ["aleksandar.popovic@linux.com"],
-      summary: "Ruby notifier for custom monitoring apps",
+      summary: "Exception reporter for Ruby apps",
       description: "Bugsonar error monitoring & exception reporter for Ruby",
-      homepage: "https://github.com/alekpopovic/bugsonar",
+      homepage: "https://github.com/bugsonar/bugsonar-ruby",
       license: "MIT",
       required_ruby_version: ">= 2.6.0",
-      source_code_uri: "https://github.com/alekpopovic/bugsonar",
-      changelog_uri: "https://github.com/alekpopovic/bugsonar/blob/main/CHANGELOG.md",
+      source_code_uri: "https://github.com/bugsonar/bugsonar-ruby",
+      changelog_uri: "https://github.com/bugsonar/bugsonar-ruby/blob/main/CHANGELOG.md",
     }
 
     specs.each { |k, v| const_set(k.upcase, v) }

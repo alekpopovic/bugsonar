@@ -2,4 +2,4 @@
 
 gem push --key github \
 --host https://rubygems.pkg.github.com/alekpopovic \
-bugsonar-2.0.0.gem
+bugsonar-0.0.1.gem

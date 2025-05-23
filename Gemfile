@@ -13,4 +13,4 @@ gem "rspec"
 gem "rubocop-shopify"
 gem "sinatra"
 gem "solargraph"
-gem 'dotenv', groups: [:development, :test]
+gem "dotenv", groups: [:development, :test]
