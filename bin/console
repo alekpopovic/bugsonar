@@ -9,9 +9,9 @@ require "dotenv"
 
 Dotenv.load
 
-Bugsonar.configure do |config|
-  config.api_key = ENV["API_KEY"]
-end
+# Bugsonar.configure do |config|
+# config.api_key = ENV["API_KEY_1"]
+# end
 
 def reload!(print: true)
   puts "Reloading ..." if print

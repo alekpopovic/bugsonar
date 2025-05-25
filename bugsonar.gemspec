@@ -1,22 +1,20 @@
 # frozen_string_literal: true
 
-require_relative "lib/bugsonar/config/config"
-
 Gem::Specification.new do |spec|
-  spec.name = Bugsonar::Config::NAME
-  spec.version = Bugsonar::Config::VERSION
-  spec.authors = Bugsonar::Config::AUTHORS
-  spec.email = Bugsonar::Config::EMAIL
+  spec.name = "bugsonar"
+  spec.version = "0.0.1"
+  spec.authors = ["Aleksandar Popovic"]
+  spec.email = ["aleksandar.popovic@linux.com"]
 
-  spec.summary = Bugsonar::Config::SUMMARY
-  spec.description = Bugsonar::Config::DESCRIPTION
-  spec.homepage = Bugsonar::Config::HOMEPAGE
-  spec.license = Bugsonar::Config::LICENSE
-  spec.required_ruby_version = Bugsonar::Config::REQUIRED_RUBY_VERSION
+  spec.summary = "Exception reporter for Ruby apps"
+  spec.description = "Bugsonar error monitoring & exception reporter for Ruby"
+  spec.homepage = "https://github.com/bugsonar/bugsonar-ruby"
+  spec.license = "MIT"
+  spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = Bugsonar::Config::SOURCE_CODE_URI
-  spec.metadata["changelog_uri"] = Bugsonar::Config::CHANGELOG_URI
+  spec.metadata["source_code_uri"] = "https://github.com/bugsonar/bugsonar-ruby"
+  spec.metadata["changelog_uri"] = "https://github.com/bugsonar/bugsonar-ruby/blob/main/CHANGELOG.md"
 
   spec.files = Dir.chdir(__dir__) do
     %x(git ls-files -z).split("\x0").reject do |f|

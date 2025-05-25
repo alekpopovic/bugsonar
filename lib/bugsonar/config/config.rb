@@ -6,6 +6,14 @@ module Bugsonar
       def included(base)
         base.extend(ClassMethods)
       end
+
+      def extended(base)
+        base.extend(ClassMethods)
+      end
+
+      def prepended(base)
+        base.extend(ClassMethods)
+      end
     end
 
     module ClassMethods
@@ -19,23 +27,16 @@ module Bugsonar
     end
 
     class Configuration
-      attr_accessor :api_key
+      def method_missing(method, *args)
+        singleton_class.class_eval { attr_accessor(method.to_s.delete("=")) }
+        send(method, args[0])
+      rescue ArgumentError => e
+        puts e
+      end
+
+      def respond_to_missing?(method, *args)
+        singleton_class.respond_to?(method) || super
+      end
     end
-
-    specs = {
-      name: "bugsonar",
-      version: "0.0.1",
-      authors: ["Aleksandar Popovic"],
-      email: ["aleksandar.popovic@linux.com"],
-      summary: "Exception reporter for Ruby apps",
-      description: "Bugsonar error monitoring & exception reporter for Ruby",
-      homepage: "https://github.com/bugsonar/bugsonar-ruby",
-      license: "MIT",
-      required_ruby_version: ">= 2.6.0",
-      source_code_uri: "https://github.com/bugsonar/bugsonar-ruby",
-      changelog_uri: "https://github.com/bugsonar/bugsonar-ruby/blob/main/CHANGELOG.md",
-    }
-
-    specs.each { |k, v| const_set(k.upcase, v) }
   end
 end
