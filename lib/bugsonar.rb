@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require "bugsonar/config/config"
-require "bugsonar/client/client"
-require "bugsonar/environment/environment"
-require "bugsonar/reporter/reporter"
-require "bugsonar/parser/parser"
-require "bugsonar/middleware/middleware"
-require "bugsonar/notifier/notifier"
-require "bugsonar/engine/bugsonar"
+require "bugsonar/config"
+require "bugsonar/client"
+require "bugsonar/environment"
+require "bugsonar/reporter"
+require "bugsonar/parser"
+require "bugsonar/middleware"
+require "bugsonar/notifier"
+require "bugsonar/engine"
 
 module Bugsonar
   include Config
